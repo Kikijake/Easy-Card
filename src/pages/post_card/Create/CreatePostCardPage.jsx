@@ -1,5 +1,5 @@
 import "./CreatePostCard.scss";
-import FilterSection from "../../../components/CreatePostCardPage/FilterSection";
+import CreatePostCardFilter from "../../../components/createPostCardPage/CreatePostCardFilter";
 import EditingSpace from "../../../components/createPostCardPage/EditingSpace";
 import { useMemo } from "react";
 const CreatePostCardPage = () => {
@@ -14,7 +14,7 @@ const CreatePostCardPage = () => {
     <div className="CreatePostCard">
       <div>
         <EditingSpace ratio={ratio}/>
-        <FilterSection />
+        <CreatePostCardFilter />
       </div>
     </div>
   );

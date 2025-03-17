@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const FilterSection = () => {
+const CreatePostCardFilter = () => {
   const [show, setShow] = useState(false);
 
   return (
@@ -22,4 +22,4 @@ const FilterSection = () => {
   );
 };
 
-export default FilterSection;
+export default CreatePostCardFilter;
