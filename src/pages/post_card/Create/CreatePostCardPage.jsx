@@ -1,5 +1,5 @@
 import "./CreatePostCard.scss";
-import FilterSection from "../../../components/CreatePostCardPage/filterSection";
+import FilterSection from "../../../components/CreatePostCardPage/FilterSection";
 import EditingSpace from "../../../components/createPostCardPage/EditingSpace";
 import { useMemo } from "react";
 const CreatePostCardPage = () => {
