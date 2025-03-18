@@ -28,7 +28,7 @@ const WelcomePage = () => {
       <div className="d-flex flex-column align-items-center justify-content-center bg-theme">
         <div className="ff-Brownie">
           Welcome to&nbsp;
-          <span className=" px-4 rounded-5 bg-white">EasyCard</span>
+          <span className=" px-4 rounded-5 bg-theme-4 border border-3 border-white">EasyCard</span>
         </div>
         <button
           className="btn-ok fs-3 mt-4 ff-Brownie"
