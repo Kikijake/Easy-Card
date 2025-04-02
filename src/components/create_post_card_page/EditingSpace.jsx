@@ -2,7 +2,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 const EditingSpace = ({ ratio, showFilter }) => {
   return (
     <div
-      className={`content bg-theme-3 ${
+      className={`content bg-theme-2 ${
         showFilter ? "show-filter" : ""
       } d-flex justify-content-center align-items-center`}
     >
@@ -10,7 +10,7 @@ const EditingSpace = ({ ratio, showFilter }) => {
         <TransformWrapper
           minScale={0.6}
           maxScale={5}
-          initialScale={1}
+          initialScale={0.9}
           centerOnInit={true}
           centerZoomedOut={true}
           limitToBounds={false}

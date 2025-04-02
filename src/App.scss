@@ -7,50 +7,107 @@
   font-family: "Brownie";
 }
 
+@font-face {
+  font-family: "SM04_Moon-Bold";
+  src: url(./assets/fonts/SM04_Moon-Bold.ttf);
+}
+
+.ff-SM04_Moon-Bold {
+  font-family: "SM04_Moon-Bold";
+}
+
+@font-face {
+  font-family: "SM04_Moon-Regular";
+  src: url(./assets/fonts/SM04_Moon-Regular.ttf);
+}
+
+.ff-SM04_Moon-Regular {
+  font-family: "SM04_Moon-Regular";
+}
+
+@font-face {
+  font-family: "SM04_Moon-Thin";
+  src: url(./assets/fonts/SM04_Moon-Thin.ttf);
+}
+
+.ff-SM04_Moon-Thin {
+  font-family: "SM04_Moon-Thin";
+}
+
+@font-face {
+  font-family: "SM04_Moon-Italic";
+  src: url(./assets/fonts/SM04Moon-Italic.ttf);
+}
+
+.ff-SM04_Moon-Italic {
+  font-family: "SM04_Moon-Italic";
+}
+
 .bg-theme {
-  background-color: #6dbb92 !important;
+  background-color: #f6839c !important;
+}
+
+.color-theme {
+  color: #f6839c !important;
 }
 
 .bg-theme-2 {
-  background-color: #59c3c3;
+  background-color: #ff3a65 !important;
 }
 
-.bg-theme-3 {
-  background-color: #6DF6AD;
-}
-
-.bg-theme-4 {
-  background-color: #f6839c;
+.color-theme-2 {
+  color: #ff3a65 !important;
 }
 
 .btn-cancel {
-  background-color: #f6839c !important;
+  background-color: white !important;
   padding: 5px 10px 5px 10px !important;
   border-radius: 10px;
-  border: 1px solid white;
+  color: #ff3a65 !important;
+  border: none;
+  box-shadow: inset 1px 1px 10px 0px #ff3a65;
+  font-family: "SM04_Moon-Bold";
 
   &:hover {
     background-color: #fe64a3 !important;
+    color: white !important;
   }
 
   &:active {
     background-color: #f6839c !important;
-    border: 1px solid gray;
   }
 }
 
 .btn-ok {
-  background-color: #59c3c3 !important;
+  background-color: #ff3a65 !important;
   padding: 5px 10px 5px 10px !important;
   border-radius: 10px;
-  border: 1px solid white;
+  color: white;
+  border: none;
+  box-shadow: inset 1px 1px 10px 0px white;
+  font-family: "SM04_Moon-Bold";
 
   &:hover {
-    background-color: #048a81 !important;
+    box-shadow: inset 0px 0px 15px 0px white;
   }
 
   &:active {
-    background-color: #59c3c3 !important;
-    border: 1px solid gray;
+    box-shadow: inset -1px -1px 10px 0px white;
   }
+}
+
+.theme-scrollbar::-webkit-scrollbar-track {
+  border-radius: 5px 0px 0px 5px;
+  background-color: #ff3a65;
+}
+
+.theme-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f6839c;
+}
+
+.theme-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: #ff3a65 solid 2.5px;
+  background-color: #f6839c;
 }

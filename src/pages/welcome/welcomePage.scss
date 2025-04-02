@@ -1,36 +1,37 @@
-.WelcomePage{
+.WelcomePage {
   font-weight: bolder;
   font-size: 5vw;
 
-  > div{
+  > div {
     width: 100vw;
     height: 100vh;
 
-    .link{
+    .link {
       font-size: 2vw;
     }
-
   }
 }
 
-.sixteenth-ninth{
-  width: 200px;
-  background-color: white;
-  aspect-ratio: 16/9 ;
+.modal-content {
+    .sixteenth-ninth {
+      width: 200px;
+      background-color: white;
+      aspect-ratio: 16/9;
 
-  &:hover{
-    cursor: pointer;
-    border: 3px solid gray;
-  }
-}
+      &:hover {
+        cursor: pointer;
+        border: 3px solid #ff3a65;
+      }
+    }
 
-.ninth-sixteenth{
-  height: 200px;
-  background-color: white;
-  aspect-ratio: 9/16 ;
+    .ninth-sixteenth {
+      height: 200px;
+      background-color: white;
+      aspect-ratio: 9/16;
 
-  &:hover{
-    cursor: pointer;
-    border: 3px solid gray;
-  }
+      &:hover {
+        cursor: pointer;
+        border: 3px solid #ff3a65;
+      }
+    }
 }

@@ -1,21 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./welcomePage.scss";
+import "./WelcomePage.scss";
 import { Modal, Row, Col } from "react-bootstrap";
 import { useCallback, useMemo, useState } from "react";
 
 const WelcomePage = () => {
   const [show, setShow] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const navigate = useNavigate();
   const ratioSelectCss = useMemo(() => {
     return {
-      border: "3px solid gray",
+      border: "3px solid #FF3A65",
     };
   },[]);
 
   const handleClose = useCallback(() => {
     setShow(false);
-    setSelectedIndex(null);
+    setSelectedIndex(0);
   }, []);
 
   const handleCreate = useCallback(() => {
@@ -26,17 +26,19 @@ const WelcomePage = () => {
   return (
     <div className="WelcomePage">
       <div className="d-flex flex-column align-items-center justify-content-center bg-theme">
-        <div className="ff-Brownie">
+        <div className="ff-SM04_Moon-Bold text-white">
           Welcome to&nbsp;
-          <span className=" px-4 rounded-5 bg-theme-4 border border-3 border-white">EasyCard</span>
+          <span className=" px-4 pb-1 rounded-5 bg-white color-theme-2">
+            EasyCard
+          </span>
         </div>
-        <button
-          className="btn-ok fs-3 mt-4 ff-Brownie"
-          onClick={() => setShow(true)}
-        >
+        <button className="btn-ok fs-3 mt-4" onClick={() => setShow(true)}>
           Create Card
         </button>
         <Modal show={show} centered={true} onHide={handleClose}>
+          <Modal.Header className="bg-theme" closeButton>
+            <h4 className="ff-SM04_Moon-Bold text-white p-0 m-0">Pick a ratio</h4>
+          </Modal.Header>
           <Modal.Body className="bg-theme">
             <div className="d-flex justify-content-center gap-5 align-items-center  ">
               <div>
@@ -45,7 +47,9 @@ const WelcomePage = () => {
                   style={selectedIndex === 0 ? ratioSelectCss : {}}
                   onClick={() => setSelectedIndex(0)}
                 ></div>
-                <div className="text-center text-white">16:9</div>
+                <div className="text-center text-white ff-SM04_Moon-Thin">
+                  16:9
+                </div>
               </div>
               <div>
                 <div
@@ -53,7 +57,9 @@ const WelcomePage = () => {
                   style={selectedIndex === 1 ? ratioSelectCss : {}}
                   onClick={() => setSelectedIndex(1)}
                 ></div>
-                <div className="text-center text-white">9:16</div>
+                <div className="text-center text-white ff-SM04_Moon-Thin">
+                  9:16
+                </div>
               </div>
             </div>
           </Modal.Body>
@@ -61,7 +67,9 @@ const WelcomePage = () => {
             <button className=" btn-cancel" onClick={handleClose}>
               Close
             </button>
-            <button className=" btn-ok" onClick={handleCreate}>Confirm</button>
+            <button className=" btn-ok" onClick={handleCreate}>
+              Confirm
+            </button>
           </Modal.Footer>
         </Modal>
       </div>

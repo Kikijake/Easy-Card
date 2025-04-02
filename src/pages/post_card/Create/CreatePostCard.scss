@@ -27,7 +27,6 @@
       align-items: center;
 
       .ed-origin {
-  
         &.sixteenth-ninth {
           width: 80%;
           background-color: white;
@@ -48,7 +47,7 @@
     display: inline-block;
     position: relative;
     transition: 0.5s;
-    border-left: 2px solid white;
+    border-left: 2.5px solid white;
 
     &.hide {
       width: 0vw;
@@ -56,33 +55,48 @@
 
     .toggle {
       position: absolute;
-      left: -30px;
+      left: -40px;
       border-top: none;
-      border-bottom: 2px solid white;
-      border-left: 2px solid white;
+      border-bottom: 2.5px solid white;
+      border-left: 2.5px solid white;
       border-right: none;
-      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px 0px 0px 10px;
+    }
+
+    .download-btn{
+      position: absolute;
+      left: -40px;
+      top: 45px;
+      border-top: none;
+      border-bottom: 2.5px solid white;
+      border-left: 2.5px solid white;
+      border-right: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px 0px 0px 10px;
     }
   }
 
   @media screen and (max-width: 768px) {
     .filter-box {
-      position:absolute;
-      top:0;
+      position: absolute;
+      top: 0;
       width: 80%;
-      right:0;
+      right: 0;
     }
-    .content{
-      &.show-filter{
+    .content {
+      &.show-filter {
         width: 100%;
       }
-      .ed-container{
+      .ed-container {
         width: 100vw;
-        .ed-origin{
-          &.sixteenth-ninth{
+        .ed-origin {
+          &.sixteenth-ninth {
             width: 100%;
           }
-          &.ninth-sixteenth{
+          &.ninth-sixteenth {
             height: 100%;
           }
         }
