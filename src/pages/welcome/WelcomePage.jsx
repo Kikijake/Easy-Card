@@ -28,11 +28,11 @@ const WelcomePage = () => {
       <div className="d-flex flex-column align-items-center justify-content-center bg-theme">
         <div className="ff-SM04_Moon-Bold text-white">
           Welcome to&nbsp;
-          <span className=" px-4 pb-1 rounded-5 bg-white color-theme-2">
+          <span className=" px-2 px-lg-4 pb-1 logo bg-white color-theme-2">
             EasyCard
           </span>
         </div>
-        <button className="btn-ok fs-3 mt-4" onClick={() => setShow(true)}>
+        <button className="btn-ok mt-4" onClick={() => setShow(true)}>
           Create Card
         </button>
         <Modal show={show} centered={true} onHide={handleClose}>
