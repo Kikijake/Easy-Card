@@ -44,8 +44,18 @@
     }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-device-width: 1080px) {
   .WelcomePage {
     font-size: 10vw;
+  }
+
+  .modal-content {
+    .sixteenth-ninth {
+      width: 150px;
+    }
+
+    .ninth-sixteenth {
+      height: 150px;
+    }
   }
 }
