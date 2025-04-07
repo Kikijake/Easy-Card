@@ -1,4 +1,4 @@
-@use '../../../variables.scss';
+@use "../../../variables.scss";
 
 .CreatePostCard {
   width: 100vw;
@@ -22,20 +22,26 @@
 
     &.hide {
       width: 0%;
-    } 
-  }
-
-  @media screen and (max-width: 1200px){
-    .filter-box{
-      width: 30%;
     }
   }
 
-  @media screen and (orientation: portrait) {
+  @media screen and (max-width: 1200px) {
+    .filter-box {
+      width: 30%;
+    }
+    .content {
+      .ed-container {
+        width: 70vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 890px),
+    screen and (max-width: 890px) and (max-height: 480px) {
     .filter-box {
       position: absolute;
       top: 0;
-      width: 60%;
+      width: 50%;
       right: 0;
     }
     .content {
@@ -45,5 +51,17 @@
     }
   }
 
-  
+  @media screen and (orientation: portrait) and (max-width: 890px) {
+    .filter-box {
+      position: absolute;
+      top: 0;
+      width: 85%;
+      right: 0;
+    }
+    .content {
+      .ed-container {
+        width: 100vw;
+      }
+    }
+  }
 }
