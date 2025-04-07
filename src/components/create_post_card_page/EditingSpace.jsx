@@ -1,6 +1,6 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import "./EditingSpace.scss";
-const EditingSpace = ({ ratio }) => {
+const EditingSpace = ({ ratio, transformRef }) => {
   return (
     <div className="content">
       <div className="bg-dark">
@@ -12,6 +12,7 @@ const EditingSpace = ({ ratio }) => {
           centerZoomedOut={true}
           limitToBounds={false}
           smooth={true}
+          ref={transformRef}
         >
           <TransformComponent>
             <div className="ed-container">

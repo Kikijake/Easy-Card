@@ -16,9 +16,7 @@
   .filter-box {
     width: 25%;
     height: 100%;
-    position: relative;
     transition: 0.5s;
-    border-left: 2.5px solid white;
 
     &.hide {
       width: 0%;
