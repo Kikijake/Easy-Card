@@ -1,0 +1,36 @@
+@use "../../variables.scss";
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-theme-2);
+
+  .ed-container {
+    width: 75vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ed-box {
+      &.sixteenth-ninth {
+        width: 100%;
+        background-color: white;
+        aspect-ratio: 16/9;
+      }
+      &.ninth-sixteenth {
+        height: 100%;
+        background-color: white;
+        aspect-ratio: 9/16;
+      }
+    }
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .content {
+    .ed-container {
+      width: 100vw;
+    }
+  }
+}

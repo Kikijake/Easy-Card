@@ -1,61 +1,51 @@
+
 .WelcomePage {
   font-weight: bolder;
-  font-size: 5vw;
-
+  font-size: 100px;
   > div {
     width: 100vw;
     height: 100vh;
-
-    .link {
-      font-size: 2vw;
-    }
   }
 
-  .logo{
+  .logo {
     border-radius: 0.3em;
   }
 
-  .btn-ok{
+  .btn-ok {
     font-size: 0.6em;
   }
 }
 
 .modal-content {
-    .sixteenth-ninth {
-      width: 200px;
-      background-color: white;
-      aspect-ratio: 16/9;
+  font-size: 25px;
+  .sixteenth-ninth {
+    width: 200px;
+    background-color: white;
+    aspect-ratio: 16/9;
 
-      &:hover {
-        cursor: pointer;
-        border: 3px solid #ff3a65;
-      }
+    &:hover {
+      cursor: pointer;
+      border: 3px solid #ff3a65;
     }
-
-    .ninth-sixteenth {
-      height: 200px;
-      background-color: white;
-      aspect-ratio: 9/16;
-
-      &:hover {
-        cursor: pointer;
-        border: 3px solid #ff3a65;
-      }
-    }
-}
-
-@media screen and (max-device-width: 1080px) {
-  .WelcomePage {
-    font-size: 10vw;
   }
 
-  .modal-content {
-    .sixteenth-ninth {
-      width: 150px;
-    }
+  .ninth-sixteenth {
+    height: 200px;
+    background-color: white;
+    aspect-ratio: 9/16;
 
-    .ninth-sixteenth {
-      height: 150px;
+    &:hover {
+      cursor: pointer;
+      border: 3px solid #ff3a65;
     }
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .WelcomePage {
+    font-size: 70px;
+  }
+  .modal-content {
+    font-size: 25px;
   }
 }

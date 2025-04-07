@@ -1,11 +1,8 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-const EditingSpace = ({ ratio, showFilter }) => {
+import "./EditingSpace.scss";
+const EditingSpace = ({ ratio }) => {
   return (
-    <div
-      className={`content bg-theme-2 ${
-        showFilter ? "show-filter" : ""
-      } d-flex justify-content-center align-items-center`}
-    >
+    <div className="content">
       <div className="bg-dark">
         <TransformWrapper
           minScale={0.6}
@@ -18,7 +15,7 @@ const EditingSpace = ({ ratio, showFilter }) => {
         >
           <TransformComponent>
             <div className="ed-container">
-              <div className={`ed-origin ${ratio}`}></div>
+              <div className={`ed-box ${ratio}`}></div>
             </div>
           </TransformComponent>
         </TransformWrapper>

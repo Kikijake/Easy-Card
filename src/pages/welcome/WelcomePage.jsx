@@ -26,7 +26,7 @@ const WelcomePage = () => {
   return (
     <div className="WelcomePage">
       <div className="d-flex flex-column align-items-center justify-content-center bg-theme">
-        <div className="ff-SM04_Moon-Bold text-white">
+        <div className="ff-SM04_Moon-Bold text-white text-center">
           Welcome to&nbsp;
           <span className=" px-2 px-lg-4 pb-1 logo bg-white color-theme-2">
             EasyCard
@@ -35,12 +35,12 @@ const WelcomePage = () => {
         <button className="btn-ok mt-4" onClick={() => setShow(true)}>
           Create Card
         </button>
-        <Modal show={show} centered={true} onHide={handleClose}>
+        <Modal show={show} dialogClassName="theme-scrollbar" centered={true} onHide={handleClose}>
           <Modal.Header className="bg-theme" closeButton>
-            <h4 className="ff-SM04_Moon-Bold text-white p-0 m-0">Pick a ratio</h4>
+            <h2 className="ff-SM04_Moon-Bold text-white p-0 m-0">Pick a ratio</h2>
           </Modal.Header>
           <Modal.Body className="bg-theme">
-            <div className="d-flex justify-content-center gap-5 align-items-center  ">
+            <div className="d-flex justify-content-center flex-wrap gap-5 align-items-center  ">
               <div>
                 <div
                   className="sixteenth-ninth"

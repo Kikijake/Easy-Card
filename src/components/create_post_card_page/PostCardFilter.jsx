@@ -9,13 +9,15 @@ import { Link } from "react-router-dom";
 import { Col, Collapse, Row } from "react-bootstrap";
 import { useState } from "react";
 
-const PostCardFilter = ({ show, setShow }) => {
+const PostCardFilter = () => {
+  const [show, setShow] = useState(true);
   // const [collapse, setCollapse] = useState(false);
 
   return (
     <div className={`filter-box bg-theme ${!show ? "hide" : ""}`}>
+      {/* Sidebar Btns */}
       <button
-        className={`toggle bg-theme d-flex 
+        className={`sidebar-btn toggle bg-theme d-flex 
           justify-content-center align-items-center`}
         onClick={() => setShow(!show)}
       >
@@ -29,7 +31,7 @@ const PostCardFilter = ({ show, setShow }) => {
         )}
       </button>
       <button
-        className="download-btn bg-white d-flex 
+        className="sidebar-btn download-btn bg-white d-flex 
           justify-content-center align-items-center"
       >
         <FontAwesomeIcon
@@ -37,17 +39,17 @@ const PostCardFilter = ({ show, setShow }) => {
           className="fs-3 color-theme-2"
         />
       </button>
+      {/* SideBar Btns End */}
       <div className="filter-container theme-scrollbar">
         <div className="filter-body">
           <div className="text-center">
-            <Link to="/welcome" className="fs-2 logo text-center">
+            <Link to="/welcome" className="logo text-center">
               EasyCard
             </Link>
           </div>
         </div>
         <footer
-          className="filter-footer bg-theme-2 ff-SM04_Moon-Regular text-white
-          d-flex justify-content-center align-items-center "
+          className="filter-footer text-white"
         >
           Design By @Ye_Htet_San
         </footer>

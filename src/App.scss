@@ -1,91 +1,89 @@
+@use "./variables.scss";
+
 @font-face {
   font-family: "Brownie";
   src: url(./assets/fonts/BrownieStencil-8O8MJ.ttf);
 }
-
-.ff-Brownie {
-  font-family: "Brownie";
-}
-
 @font-face {
   font-family: "SM04_Moon-Bold";
   src: url(./assets/fonts/SM04_Moon-Bold.ttf);
 }
-
-.ff-SM04_Moon-Bold {
-  font-family: "SM04_Moon-Bold";
-}
-
 @font-face {
   font-family: "SM04_Moon-Regular";
   src: url(./assets/fonts/SM04_Moon-Regular.ttf);
 }
-
-.ff-SM04_Moon-Regular {
-  font-family: "SM04_Moon-Regular";
-}
-
 @font-face {
   font-family: "SM04_Moon-Thin";
   src: url(./assets/fonts/SM04_Moon-Thin.ttf);
 }
-
-.ff-SM04_Moon-Thin {
-  font-family: "SM04_Moon-Thin";
-}
-
 @font-face {
   font-family: "SM04_Moon-Italic";
   src: url(./assets/fonts/SM04Moon-Italic.ttf);
 }
 
+.ff-Brownie {
+  font-family: var(--ff-sec-regular);
+}
+
+.ff-SM04_Moon-Regular {
+  font-family: var(--ff-main-regular);
+}
+
+.ff-SM04_Moon-Bold {
+  font-family: var(--ff-main-bold);
+}
+
+.ff-SM04_Moon-Thin {
+  font-family: var(--ff-main-thin);
+}
+
 .ff-SM04_Moon-Italic {
-  font-family: "SM04_Moon-Italic";
+  font-family: var(--ff-main-italic);
 }
 
 .bg-theme {
-  background-color: #f6839c !important;
+  background-color: var(--bg-theme) !important;
 }
 
 .color-theme {
-  color: #f6839c !important;
+  color: var(--color-theme) !important;
 }
 
 .bg-theme-2 {
-  background-color: #ff3a65 !important;
+  background-color: var(--bg-theme-2) !important;
 }
 
 .color-theme-2 {
-  color: #ff3a65 !important;
+  color: var(--color-theme-2) !important;
 }
 
 .btn-cancel {
   background-color: white !important;
   padding: 5px 10px 5px 10px !important;
   border-radius: 10px;
-  color: #ff3a65 !important;
+  color: var(--color-theme-2) !important;
   border: none;
-  box-shadow: inset 1px 1px 10px 0px #ff3a65;
+  box-shadow: inset 1px 1px 10px 0px var(--color-theme-2);
   font-family: "SM04_Moon-Bold";
 
   &:hover {
-    background-color: #fe64a3 !important;
+    background-color: var(--bg-secondary) !important;
     color: white !important;
   }
 
   &:active {
-    background-color: #f6839c !important;
+    background-color: var(--bg-theme) !important;
   }
 }
 
 .btn-ok {
-  background-color: #ff3a65 !important;
+  background-color: var(--bg-theme-2) !important;
   padding: 5px 10px 5px 10px !important;
   border-radius: 10px;
   color: white;
   border: none;
   box-shadow: inset 1px 1px 10px 0px white;
-  font-family: "SM04_Moon-Bold";
+  font-family: var(--ff-main-bold);
 
   &:hover {
     box-shadow: inset 0px 0px 15px 0px white;
@@ -98,16 +96,16 @@
 
 .theme-scrollbar::-webkit-scrollbar-track {
   border-radius: 5px 0px 0px 5px;
-  background-color: #ff3a65;
+  background-color: var(--bg-theme-2);
 }
 
 .theme-scrollbar::-webkit-scrollbar {
   width: 10px;
-  background-color: #f6839c;
+  background-color: var(--bg-theme);
 }
 
 .theme-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  border: #ff3a65 solid 2.5px;
-  background-color: #f6839c;
+  border: var(--color-theme-2) solid 2.5px;
+  background-color: var(--bg-theme);
 }

@@ -1,24 +1,70 @@
+@use "../../variables.scss";
+
 .filter-box {
+  font-size: 20px;
+  a {
+    text-decoration: none;
+  }
+  .sidebar-btn {
+    position: absolute;
+    border-top: none;
+    border-bottom: 2.5px solid white;
+    border-left: 2.5px solid white;
+    border-right: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px 0px 0px 10px;
+
+    &.toggle {
+      left: -40px;
+    }
+
+    &.download-btn {
+      left: -40px;
+      top: 45px;
+      border-bottom: 2.5px solid var(--color-theme);
+      border-left: 2.5px solid var(--color-theme);
+    }
+  }
+
   .filter-container {
     width: 100%;
     height: 100%;
     overflow: auto;
-    // scrollbar-color: #f6839c #ff3a65;
+    display: flex;
+    flex-direction: column;
 
     .filter-body {
-      min-height: 90%;
+      height: auto;
+      flex-grow: 1;
       width: 100%;
     }
 
     .filter-footer {
-      height: 10%;
+      height: fit-content;
+      font-family: var(--ff-main-regular);
+      background-color: var(--bg-theme-2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .logo {
       font-family: "SM04_Moon-Bold";
+      font-size: 2em;
       color: white;
       -webkit-text-stroke: 6px #ff3a65;
       paint-order: stroke;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) and (max-device-width: 1080px) {
+  .filter-box {
+    .filter-container {
+      .logo {
+        font-size: 3em;
+      }
     }
   }
 }
