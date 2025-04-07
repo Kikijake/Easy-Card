@@ -58,8 +58,19 @@
     }
   }
 }
+@media screen and (max-width: 890px),
+  screen and (max-width: 890px) and (max-height: 480px) {
+  .filter-box {
+    font-size: 14px;
+    .filter-container {
+      .logo {
+        font-size: 3em;
+      }
+    }
+  }
+}
 
-@media screen and (orientation: portrait) and (max-device-width: 1080px) {
+@media screen and (orientation: portrait) and (max-width: 890px) {
   .filter-box {
     font-size: 14px;
     .filter-container {
