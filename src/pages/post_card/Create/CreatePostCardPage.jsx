@@ -9,7 +9,7 @@ const CreatePostCardPage = () => {
   );
   const transformRef = useRef(null);
   const handleResetImage = () => {
-    transformRef.current.centerView(0.9);
+    transformRef.current.centerView(ratio === "three-two" ? 0.9 : 0.5);
   };
 
   return (
