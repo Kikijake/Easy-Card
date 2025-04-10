@@ -57,6 +57,10 @@
   color: var(--color-theme-2) !important;
 }
 
+.border-theme-2 {
+  border: 1px solid var(--color-theme-2) !important;
+}
+
 .btn-cancel {
   background-color: white !important;
   padding: 5px 10px 5px 10px !important;
@@ -95,13 +99,13 @@
 }
 
 .theme-scrollbar::-webkit-scrollbar-track {
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px;
   background-color: var(--bg-theme-2);
 }
 
 .theme-scrollbar::-webkit-scrollbar {
   width: 10px;
-  background-color: var(--bg-theme);
+  // background-color: var(--bg-theme);
 }
 
 .theme-scrollbar::-webkit-scrollbar-thumb {

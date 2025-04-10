@@ -13,15 +13,21 @@
     align-items: center;
 
     .ed-box {
-      &.sixteenth-ninth {
-        width: 100%;
-        background-color: #E9FFF9;
-        aspect-ratio: 16/9;
+      &.three-two {
+        width: 720px;
+        aspect-ratio: 3/2;
       }
-      &.ninth-sixteenth {
-        height: 100%;
-        background-color: #E9FFF9;
-        aspect-ratio: 9/16;
+      &.two-three {
+        height: 720px;
+        aspect-ratio: 2/3;
+      }
+
+      &.white {
+        background-color: #e9fff9;
+      }
+
+      &.theme{
+        background-color: var(--bg-theme);
       }
     }
   }

@@ -28,6 +28,28 @@
     }
   }
 
+  .three-two {
+    width: 200px;
+    background-color: white;
+    aspect-ratio: 3/2;
+
+    &:hover {
+      cursor: pointer;
+      border: 3px solid #ff3a65;
+    }
+  }
+
+  .two-three {
+    height: 200px;
+    background-color: white;
+    aspect-ratio: 2/3;
+
+    &:hover {
+      cursor: pointer;
+      border: 3px solid #ff3a65;
+    }
+  }
+
   .ninth-sixteenth {
     height: 200px;
     background-color: white;

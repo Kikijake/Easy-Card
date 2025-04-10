@@ -1,0 +1,39 @@
+@use "../../variables.scss";
+
+.dd-container {
+  .dd-header {
+    box-shadow: 0px 0px 10px 4px white;
+    border-radius: 0.7em;
+    .dd-title {
+      font-family: var(--ff-main-bold);
+      border: 0.15em solid var(--color-theme-2);
+      border-radius: 0.7em;
+      font-size: 0.8em;
+      color: var(--color-theme-2);
+    }
+    .dd-btn {
+      background-color: var(--bg-theme-2);
+      border: 2em 2em 2em 0em solid var(--color-theme-2);
+      .icon {
+        transform: rotate(0) scale(1.5);
+        transition: 0.5s;
+        &.active {
+          transform: rotateX(180deg) scale(1.5);
+        }
+      }
+    }
+  }
+  .dd-body {
+    background-color: rgba(255, 255, 255, 0.29);
+    border-radius: 0 0 0.7em 0.7em;
+    box-shadow: 0px 0px 10px 4px var(--bg-theme-2);
+    .theme-scrollbar {
+      max-height: 250px;
+      overflow: auto;
+    }
+  }
+}
+
+.background-item::hover{
+  border: 2px solid var(--color-theme-2);
+}

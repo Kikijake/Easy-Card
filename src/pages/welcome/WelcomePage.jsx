@@ -2,8 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import "./WelcomePage.scss";
 import { Modal, Row, Col } from "react-bootstrap";
 import { useCallback, useMemo, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setBackground } from "../../redux";
 
 const WelcomePage = () => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const navigate = useNavigate();
@@ -19,7 +22,8 @@ const WelcomePage = () => {
   }, []);
 
   const handleCreate = useCallback(() => {
-    localStorage.setItem("selectedRatio", JSON.stringify(selectedIndex === 0 ? "sixteenth-ninth" : "ninth-sixteenth"));
+    localStorage.setItem("selectedRatio", JSON.stringify(selectedIndex === 0 ? "three-two" : "two-three"));
+    dispatch(setBackground({ image: "", color: "white" }));
     navigate("/postcard/create");
   }, [navigate,selectedIndex]);
 
@@ -35,30 +39,37 @@ const WelcomePage = () => {
         <button className="btn-ok mt-4" onClick={() => setShow(true)}>
           Create Card
         </button>
-        <Modal show={show} dialogClassName="theme-scrollbar" centered={true} onHide={handleClose}>
+        <Modal
+          show={show}
+          dialogClassName="theme-scrollbar"
+          centered={true}
+          onHide={handleClose}
+        >
           <Modal.Header className="bg-theme" closeButton>
-            <h2 className="ff-SM04_Moon-Bold text-white p-0 m-0">Pick a ratio</h2>
+            <h2 className="ff-SM04_Moon-Bold text-white p-0 m-0">
+              Pick a ratio
+            </h2>
           </Modal.Header>
           <Modal.Body className="bg-theme">
             <div className="d-flex justify-content-center flex-wrap gap-5 align-items-center  ">
               <div>
                 <div
-                  className="sixteenth-ninth"
+                  className="three-two"
                   style={selectedIndex === 0 ? ratioSelectCss : {}}
                   onClick={() => setSelectedIndex(0)}
                 ></div>
                 <div className="text-center text-white ff-SM04_Moon-Thin">
-                  16:9
+                  3:2
                 </div>
               </div>
               <div>
                 <div
-                  className="ninth-sixteenth"
+                  className="two-three"
                   style={selectedIndex === 1 ? ratioSelectCss : {}}
                   onClick={() => setSelectedIndex(1)}
                 ></div>
                 <div className="text-center text-white ff-SM04_Moon-Thin">
-                  9:16
+                  2:3
                 </div>
               </div>
             </div>
