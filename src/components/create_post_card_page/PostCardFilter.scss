@@ -7,39 +7,58 @@
   a {
     text-decoration: none;
   }
-  .sidebar-btn {
+  .side-btn-wrapper {
     position: absolute;
-    border-top: none;
-    border-bottom: 2.5px solid white;
-    border-left: 2.5px solid white;
-    border-right: none;
-    width: 38px;
-    height: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     left: -40px;
+  }
+  .sidebar-btn {
+    height: 40px;
     border-radius: 4px 0px 0px 10px;
     font-size: 1.2em;
-    background-color: white;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.toggle {
       width: 40px;
       color: white;
       background-color: var(--bg-theme);
+      border-bottom: 2.5px solid white;
+      border-left: 2.5px solid white;
+
+      &:hover {
+        color: var(--color-theme-2);
+      }
+
+      &:active {
+        box-shadow: inset 0px 0px 10px 0px white;
+      }
     }
 
-    &.download-btn {
-      top: 45px;
+    &.action-btn {
+      width: 38px;
+      background-color: white;
+      border-bottom: 2.5px solid var(--color-theme);
+      border-left: 2.5px solid var(--color-theme);
       color: var(--color-theme-2);
-      border-bottom: 2.5px solid var(--color-theme);
-      border-left: 2.5px solid var(--color-theme);
-    }
 
-    &.refresh-btn {
-      top: 90px;
-      color: var(--bg-theme-2);
-      border-bottom: 2.5px solid var(--color-theme);
-      border-left: 2.5px solid var(--color-theme);
-    }
+      &.disable {
+        color: var(--color-theme);
+      }
 
+      &:not(.disable):hover {
+        box-shadow: inset 0px 0px 5px 0px var(--color-theme-2);
+      }
+
+      &:not(.disable):active {
+        box-shadow: inset 0px 0px 10px 2px var(--color-theme-2);
+      }
+    }
   }
 
   .filter-container {

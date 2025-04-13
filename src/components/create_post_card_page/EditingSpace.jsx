@@ -2,8 +2,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import "./EditingSpace.scss";
 import { useSelector } from "react-redux";
 const EditingSpace = ({ ratio, transformRef }) => {
-  const background = useSelector((state) => state.background);
-  console.log(background);
+  const background = useSelector((state) => state.selectedItems.background);
   return (
     <div className="content">
       <div className="bg-dark">
@@ -20,14 +19,11 @@ const EditingSpace = ({ ratio, transformRef }) => {
           <TransformComponent>
             <div className="ed-container">
               <div
-                // src={`${background.image || "#"}`}
                 className={`ed-box ${ratio}`}
                 style={{
                   backgroundImage: `url(${background.image || ""})`,
                   backgroundSize: "cover",
                   backgroundColor: `${background.color || ""}`,
-                  // objectFit: "cover",
-
                 }}
               ></div>
             </div>

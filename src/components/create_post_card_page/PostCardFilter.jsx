@@ -3,49 +3,96 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAnglesLeft,
   faAnglesRight,
-  faExpand,
+  faArrowsRotate,
+  faArrowTurnDown,
+  faArrowTurnUp,
   faFileArrowDown,
-  faRotateRight,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { Col, Collapse, Row } from "react-bootstrap";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setBackground } from "../../redux";
+import { useEffect, useState } from "react";
 import Dropdown from "../common/Dropdown";
 import BackgroundItems from "../dropdown_options/BackgroundItems";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  redoSelectedItems,
+  undoSelectedItems,
+} from "../../redux/selectedItems/selected-items-actions";
+import { getIDandItems } from "../../utils";
 
 const PostCardFilter = ({ handleResetImage }) => {
+  const selectedItems = useSelector((state) => state.selectedItems);
+  const dispatch = useDispatch();
   const [show, setShow] = useState(true);
-  // const dispatch = useDispatch();
-  // const handleOnClick = () => {
-  //   dispatch(setBackground(<h1>hello</h1>));
-  // };
+  const [disbleBtn, setDisableBtn] = useState({
+    isRedo: true,
+    isUndo: true,
+  });
+  const handleUndo = () => {
+    dispatch(undoSelectedItems());
+  };
+
+  const handleRedo = () => {
+    dispatch(redoSelectedItems());
+  };
+
+  useEffect(() => {
+    const { activeID, selectedItems } = getIDandItems();
+    let isDisable = { ...disbleBtn };
+    if (activeID === selectedItems[0].historyID) {
+      isDisable.isRedo = true;
+    } else {
+      isDisable.isRedo = false;
+    }
+    if (activeID === 0) {
+      isDisable.isUndo = true;
+    } else {
+      isDisable.isUndo = false;
+    }
+    setDisableBtn(isDisable);
+  }, [selectedItems]);
 
   return (
     <div className={`filter-box bg-theme ${!show ? "hide" : ""}`}>
       {/* Sidebar Btns */}
-      <button
-        className={`sidebar-btn toggle d-flex 
-          justify-content-center align-items-center`}
-        onClick={() => setShow(!show)}
-      >
-        <FontAwesomeIcon icon={!show ? faAnglesLeft : faAnglesRight} />
-      </button>
-      <button
-        className="sidebar-btn download-btn d-flex 
-          justify-content-center align-items-center"
-        onClick={handleResetImage}
-      >
-        <FontAwesomeIcon icon={faFileArrowDown} />
-      </button>
-      <button
-        className="sidebar-btn refresh-btn d-flex 
-          justify-content-center align-items-center"
-        onClick={handleResetImage}
-      >
-        <FontAwesomeIcon icon={faExpand} />
-      </button>
+      <div className="side-btn-wrapper">
+        <button className={`sidebar-btn toggle`} onClick={() => setShow(!show)}>
+          <FontAwesomeIcon icon={!show ? faAnglesLeft : faAnglesRight} />
+        </button>
+        <Link to="/welcome" className="sidebar-btn action-btn" title="Home">
+          <FontAwesomeIcon icon={faHome} />
+        </Link>
+        <button
+          className="sidebar-btn action-btn"
+          onClick={handleResetImage}
+          title="Download"
+        >
+          <FontAwesomeIcon icon={faFileArrowDown} />
+        </button>
+        <button
+          className="sidebar-btn action-btn"
+          onClick={handleResetImage}
+          title="Resize"
+        >
+          <FontAwesomeIcon icon={faArrowsRotate} />
+        </button>
+        <button
+          className={`sidebar-btn action-btn ${disbleBtn.isUndo ? "disable" : ""}`}
+          onClick={handleUndo}
+          title="Undo"
+          disabled={disbleBtn.isUndo}
+        >
+          <FontAwesomeIcon icon={faArrowTurnUp} className="fa-rotate-270" />
+        </button>
+        <button
+          className={`sidebar-btn action-btn ${disbleBtn.isRedo ? "disable" : ""}`}
+          onClick={handleRedo}
+          title="Redo"
+          disabled={disbleBtn.isRedo}
+        >
+          <FontAwesomeIcon icon={faArrowTurnDown} className="fa-rotate-270" />
+        </button>
+      </div>
       {/* SideBar Btns End */}
       <div className="filter-container theme-scrollbar">
         <div className="filter-body">
@@ -57,10 +104,10 @@ const PostCardFilter = ({ handleResetImage }) => {
           <Dropdown title="Backgrounds" items={<BackgroundItems />} />
           <Dropdown title="Decorations" items={<BackgroundItems />} />
           <Dropdown title="Stickers" items={<BackgroundItems />} />
-          <Dropdown title="Filters" items={<BackgroundItems />}/>
+          <Dropdown title="Filters" items={<BackgroundItems />} />
         </div>
         <footer className="filter-footer text-white py-1">
-          Design By @Ye_Htet_San
+          Designed By @Ye_Htet_San
         </footer>
       </div>
     </div>

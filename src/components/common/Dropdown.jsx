@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
 import {
   Button,
   Collapse,
@@ -12,8 +12,8 @@ import "../../assets/scss/Dropdown.scss";
 
 /**
  *
- * @param {{ title: string, items: node }} param0
- * @returns
+ * @param {{ title: string, items: node }} props
+ * @returns {JSX}
  */
 const Dropdown = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);

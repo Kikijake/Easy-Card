@@ -3,7 +3,7 @@ import "./WelcomePage.scss";
 import { Modal, Row, Col } from "react-bootstrap";
 import { useCallback, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setBackground } from "../../redux";
+import { resetSelectedItems } from "../../redux/selectedItems/selected-items-actions";
 
 const WelcomePage = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const WelcomePage = () => {
     return {
       border: "3px solid #FF3A65",
     };
-  },[]);
+  }, []);
 
   const handleClose = useCallback(() => {
     setShow(false);
@@ -22,10 +22,17 @@ const WelcomePage = () => {
   }, []);
 
   const handleCreate = useCallback(() => {
-    localStorage.setItem("selectedRatio", JSON.stringify(selectedIndex === 0 ? "three-two" : "two-three"));
-    dispatch(setBackground({ image: "", color: "white" }));
+    localStorage.setItem(
+      "selectedRatio",
+      JSON.stringify(selectedIndex === 0 ? "three-two" : "two-three")
+    );
+    dispatch(resetSelectedItems());
     navigate("/postcard/create");
-  }, [navigate,selectedIndex]);
+  }, [navigate, selectedIndex, dispatch]);
+
+  const handleContinue = useCallback(() => {
+    navigate("/postcard/create");
+  }, [navigate]);
 
   return (
     <div className="WelcomePage">
@@ -36,9 +43,14 @@ const WelcomePage = () => {
             EasyCard
           </span>
         </div>
-        <button className="btn-ok mt-4" onClick={() => setShow(true)}>
-          Create Card
-        </button>
+        <div>
+          <button className="btn-ok mt-4" onClick={() => setShow(true)}>
+            Create New
+          </button>
+          <button className="btn-ok mt-4 ms-4" onClick={handleContinue}>
+            Continue
+          </button>
+        </div>
         <Modal
           show={show}
           dialogClassName="theme-scrollbar"

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import backgroundReducer from "./backgrounds/background-reducer";
+import selectedItemsReducer from "./selectedItems/selected-items-reducer";
 
 const rootReducer = combineReducers({
-  background: backgroundReducer,
+  selectedItems: selectedItemsReducer
 });
 
 export default rootReducer;

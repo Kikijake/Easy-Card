@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap";
-import { setBackground } from "../../redux";
 import { useDispatch } from "react-redux";
+import { setSelectedItems } from "../../redux/selectedItems/selected-items-actions";
 
 const BackgroundItems = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const BackgroundItems = () => {
   ];
 
   const handleOnClick = (background) => {
-    dispatch(setBackground(background));
+    dispatch(setSelectedItems("background",background));
   };
 
   return (
