@@ -4,11 +4,14 @@ import { Modal, Row, Col } from "react-bootstrap";
 import { useCallback, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { resetSelectedItems } from "../../redux/selectedItems/selected-items-actions";
+import { useEffect } from "react";
+import { getIDandItems, getLSRatio } from "../../utils";
 
 const WelcomePage = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [disableContinue, setDisableContinue] = useState(true);
   const navigate = useNavigate();
   const ratioSelectCss = useMemo(() => {
     return {
@@ -34,6 +37,14 @@ const WelcomePage = () => {
     navigate("/postcard/create");
   }, [navigate]);
 
+  useEffect(() => {
+    const selectedRatio = getLSRatio();
+    const { activeID, selectedItems } = getIDandItems();
+    if (selectedRatio && activeID && selectedItems) {
+      setDisableContinue(false);
+    }
+  }, []);
+
   return (
     <div className="WelcomePage">
       <div className="d-flex flex-column align-items-center justify-content-center bg-theme">
@@ -47,9 +58,11 @@ const WelcomePage = () => {
           <button className="btn-ok mt-4" onClick={() => setShow(true)}>
             Create New
           </button>
-          <button className="btn-ok mt-4 ms-4" onClick={handleContinue}>
-            Continue
-          </button>
+          {!disableContinue && (
+            <button className="btn-ok mt-4 ms-4" onClick={handleContinue}>
+              Continue
+            </button>
+          )}
         </div>
         <Modal
           show={show}

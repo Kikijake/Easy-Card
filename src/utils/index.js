@@ -20,6 +20,10 @@ export const setItemsToLS = (key, value) => {
   localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
 };
 
+/**
+ * get activeID and selectedItems from localStorage
+ * @returns {{ activeID: number, selectedItems: object }}
+ */
 export const getIDandItems = () => {
   const activeID = JSON.parse(localStorage.getItem("activeID")) || 0;
   const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
@@ -33,4 +37,9 @@ export const getLayerByChangedID = (selectedItems, changedID) => {
   const newActiveID = selectedItems[findIndex].historyID;
   localStorage.setItem("activeID", JSON.stringify(newActiveID));
   return selectedItems[findIndex];
+}
+
+export const getLSRatio = () => {
+  return JSON.parse(localStorage.getItem("selectedRatio"));
+
 }

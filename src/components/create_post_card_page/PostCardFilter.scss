@@ -24,6 +24,13 @@
     justify-content: center;
     align-items: center;
 
+    .loading-icon {
+      position: relative;
+      top: -0.4em;
+      transform: scale(3);
+      color: var(--color-theme-2);
+    }
+
     &.toggle {
       width: 40px;
       color: white;

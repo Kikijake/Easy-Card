@@ -19,8 +19,14 @@ import {
   undoSelectedItems,
 } from "../../redux/selectedItems/selected-items-actions";
 import { getIDandItems } from "../../utils";
+import Lottie from "lottie-react";
+import loading from "../../assets/animations/loading.json";
 
-const PostCardFilter = ({ handleResetImage }) => {
+const PostCardFilter = ({
+  handleResetImage,
+  handleDownloadImage,
+  downloadLoading,
+}) => {
   const selectedItems = useSelector((state) => state.selectedItems);
   const dispatch = useDispatch();
   const [show, setShow] = useState(true);
@@ -64,10 +70,14 @@ const PostCardFilter = ({ handleResetImage }) => {
         </Link>
         <button
           className="sidebar-btn action-btn"
-          onClick={handleResetImage}
+          onClick={handleDownloadImage}
           title="Download"
         >
-          <FontAwesomeIcon icon={faFileArrowDown} />
+          {!downloadLoading ? (
+            <FontAwesomeIcon icon={faFileArrowDown} />
+          ) : (
+            <Lottie animationData={loading} className="loading-icon" />
+          )}
         </button>
         <button
           className="sidebar-btn action-btn"
@@ -77,7 +87,9 @@ const PostCardFilter = ({ handleResetImage }) => {
           <FontAwesomeIcon icon={faArrowsRotate} />
         </button>
         <button
-          className={`sidebar-btn action-btn ${disbleBtn.isUndo ? "disable" : ""}`}
+          className={`sidebar-btn action-btn ${
+            disbleBtn.isUndo ? "disable" : ""
+          }`}
           onClick={handleUndo}
           title="Undo"
           disabled={disbleBtn.isUndo}
@@ -85,7 +97,9 @@ const PostCardFilter = ({ handleResetImage }) => {
           <FontAwesomeIcon icon={faArrowTurnUp} className="fa-rotate-270" />
         </button>
         <button
-          className={`sidebar-btn action-btn ${disbleBtn.isRedo ? "disable" : ""}`}
+          className={`sidebar-btn action-btn ${
+            disbleBtn.isRedo ? "disable" : ""
+          }`}
           onClick={handleRedo}
           title="Redo"
           disabled={disbleBtn.isRedo}
