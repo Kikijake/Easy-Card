@@ -2,7 +2,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import "./EditingSpace.scss";
 import { useSelector } from "react-redux";
 const EditingSpace = ({ ratio, transformRef, imageRef }) => {
-  const background = useSelector((state) => state.selectedItems.background);
+  const { background, stickers } = useSelector((state) => state.selectedItems);
   return (
     <div className="content">
       <div className="bg-dark">
@@ -20,7 +20,7 @@ const EditingSpace = ({ ratio, transformRef, imageRef }) => {
             <div className="ed-container">
               <div
                 ref={imageRef}
-                className={`ed-box ${ratio}`}
+                className={`ed-box ${ratio} overflow-hidden`}
                 style={{
                   backgroundImage: `url(${background.image || ""})`,
                   backgroundSize: "cover",
@@ -28,7 +28,14 @@ const EditingSpace = ({ ratio, transformRef, imageRef }) => {
                   backgroundPosition: "center",
                 }}
               >
-                Welcome To Easy Card
+                {stickers.length > 0 &&
+                  stickers.map((path, index) => (
+                      <img
+                        src={path}
+                        key={index}
+                        style={{ width: "5%", objectFit: "contain" }}
+                      />
+                  ))}
               </div>
             </div>
           </TransformComponent>

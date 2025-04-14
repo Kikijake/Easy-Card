@@ -34,18 +34,6 @@ const Dropdown = ({ title, items }) => {
             <div className="theme-scrollbar">
               <Container>
                 {items}
-                {/* <div className="row">
-                  {[...Array(7)].map((__, index) => (
-                    <div className="col-6 p-1" key={index}>
-                      <div
-                        className="bg-white"
-                        style={{
-                          aspectRatio: "3/2",
-                        }}
-                      ></div>
-                    </div>
-                  ))}
-                </div> */}
               </Container>
             </div>
           </div>

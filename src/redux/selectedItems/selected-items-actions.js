@@ -43,3 +43,11 @@ export const redoSelectedItems = () => {
   const changedLayer = getLayerByChangedID(selectedItems, increasedID);
   return { type: SET_SELECTED_ITEMS, payload: changedLayer };
 };
+
+export const setStickers = (path) => (dispatch) => {
+  const { activeID, selectedItems } = getIDandItems();
+  const currentLayer = selectedItems.find((item) => item.historyID === activeID);
+  const stickers = currentLayer.stickers || [];
+  stickers.unshift(path);
+  dispatch(setSelectedItems("stickers", stickers));
+}

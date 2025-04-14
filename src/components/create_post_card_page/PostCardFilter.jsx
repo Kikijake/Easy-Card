@@ -21,6 +21,7 @@ import {
 import { getIDandItems } from "../../utils";
 import Lottie from "lottie-react";
 import loading from "../../assets/animations/loading.json";
+import StickerItems from "../dropdown_options/StickerItems";
 
 const PostCardFilter = ({
   handleResetImage,
@@ -116,8 +117,8 @@ const PostCardFilter = ({
             </Link>
           </div>
           <Dropdown title="Backgrounds" items={<BackgroundItems />} />
+          <Dropdown title="Stickers" items={<StickerItems />} />
           <Dropdown title="Decorations" items={<BackgroundItems />} />
-          <Dropdown title="Stickers" items={<BackgroundItems />} />
           <Dropdown title="Filters" items={<BackgroundItems />} />
         </div>
         <footer className="filter-footer text-white py-1">
