@@ -66,7 +66,7 @@ const PostCardFilter = ({
         <button className={`sidebar-btn toggle`} onClick={() => setShow(!show)}>
           <FontAwesomeIcon icon={!show ? faAnglesLeft : faAnglesRight} />
         </button>
-        <Link to="/welcome" className="sidebar-btn action-btn" title="Home">
+        <Link to="/easy-card" className="sidebar-btn action-btn" title="Home">
           <FontAwesomeIcon icon={faHome} />
         </Link>
         <button
@@ -112,7 +112,7 @@ const PostCardFilter = ({
       <div className="filter-container theme-scrollbar">
         <div className="filter-body">
           <div className="text-center mb-3">
-            <Link to="/welcome" className="logo text-center">
+            <Link to="/easy-card" className="logo text-center">
               EasyCard
             </Link>
           </div>

@@ -27,7 +27,7 @@ const CreatePostCardPage = () => {
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "my-postcard.png";
+        link.download = "easy-card.png";
         link.href = dataUrl;
         link.click();
       })

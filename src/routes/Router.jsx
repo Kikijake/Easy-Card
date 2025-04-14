@@ -8,9 +8,9 @@ const Router = () => {
     <>
       <Routes>
         <Route path="*" element={<>404 Page Not Found</>} />
-        <Route path="/welcome" element={<WelcomePage />} />
-        <Route path="/" element={<Navigate to="/welcome" />} />
-        <Route path="/postcard/create" element={<CreatePostCard />} />
+        <Route path="/easy-card" element={<WelcomePage />} />
+        <Route path="/" element={<Navigate to="/easy-card" />} />
+        <Route path="/easy-card/create" element={<CreatePostCard />} />
         <Route path="/test/rnd" element={<RndTest />} />
         <Route path="/test/zooming" element={<ZoomingTest />} />
       </Routes>

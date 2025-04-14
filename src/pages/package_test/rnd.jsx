@@ -25,25 +25,53 @@ const ResizableDraggableBox = () => {
   }, [size, position]);
 
   return (
-    <Rnd
-      size={{ width: size.width, height: size.height }}
-      position={{ x: position.x, y: position.y }}
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
-      onResizeStop={(e, direction, ref, delta, pos) => {
-        setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
-        setPosition(pos);
-        console.log(pos);
-      }}
-      style={{
-        background: "lightblue",
-        border: "1px solid black",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      Resize & Drag Me
-    </Rnd>
+    <>
+      <Rnd
+        size={{ width: size.width, height: size.height }}
+        position={{ x: position.x, y: position.y }}
+        onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
+        onResizeStop={(e, direction, ref, delta, pos) => {
+          setSize({ width: ref.offsetWidth, height: ref.offsetHeight });
+          setPosition(pos);
+          console.log(pos);
+        }}
+        style={{
+          background: "lightblue",
+          border: "1px solid black",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Resize & Drag Me
+      </Rnd>
+      <div
+        id="parent"
+        style={{
+          width: "800px",
+          height: "600px",
+          border: "2px solid black",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <Rnd
+          default={{
+            x: 0,
+            y: 0,
+            width: 200,
+            height: 100,
+          }}
+          lockAspectRatio={true}
+          bounds="parent" // 💡 THIS is the magic
+          style={{
+            backgroundColor: "#ccc",
+          }}
+        >
+          <p>Drag me!</p>
+        </Rnd>
+      </div>
+    </>
   );
 };
 

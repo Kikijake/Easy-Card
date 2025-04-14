@@ -30,11 +30,11 @@ const WelcomePage = () => {
       JSON.stringify(selectedIndex === 0 ? "three-two" : "two-three")
     );
     dispatch(resetSelectedItems());
-    navigate("/postcard/create");
+    navigate("/easy-card/create");
   }, [navigate, selectedIndex, dispatch]);
 
   const handleContinue = useCallback(() => {
-    navigate("/postcard/create");
+    navigate("/easy-card/create");
   }, [navigate]);
 
   useEffect(() => {
