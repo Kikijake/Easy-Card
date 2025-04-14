@@ -48,6 +48,6 @@ export const setStickers = (path) => (dispatch) => {
   const { activeID, selectedItems } = getIDandItems();
   const currentLayer = selectedItems.find((item) => item.historyID === activeID);
   const stickers = currentLayer.stickers || [];
-  stickers.unshift(path);
+  stickers.push(path)
   dispatch(setSelectedItems("stickers", stickers));
 }
